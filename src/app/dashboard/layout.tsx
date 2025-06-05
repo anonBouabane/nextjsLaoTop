@@ -14,32 +14,39 @@ export default function DashboardLayout({
       <Header
         style={{
           height: 70,
-          lineHeight: "70px",
           backgroundColor: "#001529",
           color: "white",
           padding: "0 20px",
           fontSize: "20px",
           fontWeight: "bold",
+          display: "flex",
+          alignItems: "center",
         }}
       >
         dashboard
       </Header>
 
-      <Layout>
+      <Layout style={{ flex: 1 }}>
         <Sider
           width={200}
           style={{
             backgroundColor: "#f0f2f5",
-            height: `calc(100vh - 70px)`,
-            minWidth: 100,
-            maxWidth: 200,
-            overflow: "auto",
+            overflowY: "auto",
           }}
         >
           <Nav />
         </Sider>
 
-        <Content style={{ flex: 1 }}>{children}</Content>
+        <Content
+          style={{
+            padding: "24px",
+            backgroundColor: "#fff",
+            overflow: "auto",
+            flex: 1,
+          }}
+        >
+          {children}
+        </Content>
       </Layout>
     </Layout>
   );
